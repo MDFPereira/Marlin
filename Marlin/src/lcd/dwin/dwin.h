@@ -16,7 +16,11 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 #pragma once
@@ -27,6 +31,7 @@
 
 #include "dwin_lcd.h"
 #include "rotary_encoder.h"
+<<<<<<< HEAD
 #include "eeprom_BL24CXX.h"
 
 #include <stdint.h>
@@ -70,6 +75,14 @@
 
 enum processID {
   /*Process ID*/
+=======
+#include "../../libs/BL24CXX.h"
+
+#include <stdint.h>
+
+enum processID {
+  // Process ID
+>>>>>>> upstream/2.0.x
   MainMenu,
   SelectFile,
   Prepare,
@@ -94,6 +107,7 @@ enum processID {
   Step,
   Step_value,
 
+<<<<<<< HEAD
   /*Last Process ID*/
   Last_Prepare,
 
@@ -102,6 +116,16 @@ enum processID {
   Back_Print,
 
   /*Date variable ID*/
+=======
+  // Last Process ID
+  Last_Prepare,
+
+  // Back Process ID
+  Back_Main,
+  Back_Print,
+
+  // Date variable ID
+>>>>>>> upstream/2.0.x
   Move_X,
   Move_Y,
   Move_Z,
@@ -118,17 +142,29 @@ enum processID {
   #endif
   PrintSpeed,
 
+<<<<<<< HEAD
   /*Window ID*/
+=======
+  // Window ID
+>>>>>>> upstream/2.0.x
   Print_window,
   Popup_Window
 };
 
+<<<<<<< HEAD
 /*Picture ID*/
+=======
+// Picture ID
+>>>>>>> upstream/2.0.x
 #define Start_Process       0
 #define Language_English    1
 #define Language_Chinese    2
 
+<<<<<<< HEAD
 /*ICON ID*/
+=======
+// ICON ID
+>>>>>>> upstream/2.0.x
 #define ICON                      0x09
 #define ICON_LOGO                  0
 #define ICON_Print_0               1
@@ -227,11 +263,19 @@ enum processID {
 #define ICON_Info_0               90
 #define ICON_Info_1               91
 
+<<<<<<< HEAD
 /*
 * 3-.0：字号大小，0x00-0x09，对应字体大小于下：
 * 0x00=6*12   0x01=8*16   0x02=10*20  0x03=12*24  0x04=14*28
 * 0x05=16*32  0x06=20*40  0x07=24*48  0x08=28*56  0x09=32*64
 */
+=======
+/**
+ * 3-.0：The font size, 0x00-0x09, corresponds to the font size below:
+ * 0x00=6*12   0x01=8*16   0x02=10*20  0x03=12*24  0x04=14*28
+ * 0x05=16*32  0x06=20*40  0x07=24*48  0x08=28*56  0x09=32*64
+ */
+>>>>>>> upstream/2.0.x
 #define font6x12  0x00
 #define font8x16  0x01
 #define font10x20 0x02
@@ -243,6 +287,7 @@ enum processID {
 #define font28x56 0x08
 #define font32x64 0x09
 
+<<<<<<< HEAD
 /* Colour */
 #define White             0xFFFF
 #define Background_window 0x31E8  // 弹窗背景色
@@ -254,6 +299,19 @@ enum processID {
 #define Percent_Color     0xFE29  // 百分比颜色
 #define BarFill_Color     0x10E4  // 进度条填充色
 #define Select_Color      0x33BB  // 选中色
+=======
+// Color
+#define White             0xFFFF
+#define Background_window 0x31E8  // Popup background color
+#define Background_blue   0x1125  // Dark blue background color
+#define Background_black  0x0841  // black background color
+#define Font_window       0xD6BA  // Popup font background color
+#define Line_Color        0x3A6A  // Split line color
+#define Rectangle_Color   0xEE2F  // blue square cursor color
+#define Percent_Color     0xFE29  // percentage color
+#define BarFill_Color     0x10E4  // fill color of progress bar
+#define Select_Color      0x33BB  // selected color
+>>>>>>> upstream/2.0.x
 
 extern int checkkey, last_checkkey;
 extern float zprobe_zoffset;
@@ -262,6 +320,7 @@ extern char print_filename[16];
 extern millis_t dwin_heat_time;
 
 typedef struct {
+<<<<<<< HEAD
   #if HAS_HOTEND
     int16_t E_Temp        = 0;
   #endif
@@ -271,6 +330,11 @@ typedef struct {
   #if HAS_FAN
     int16_t Fan_speed     = 0;
   #endif
+=======
+  TERN_(HAS_HOTEND,     int16_t E_Temp    = 0);
+  TERN_(HAS_HEATED_BED, int16_t Bed_Temp  = 0);
+  TERN_(HAS_FAN,        int16_t Fan_speed = 0);
+>>>>>>> upstream/2.0.x
   int16_t print_speed     = 100;
   float Max_Feedspeed     = 0;
   float Max_Acceleration  = 0;
@@ -311,12 +375,20 @@ typedef struct {
 extern HMI_value_t HMI_ValueStruct;
 extern HMI_Flag    HMI_flag;
 
+<<<<<<< HEAD
 /* Language */
+=======
+// Language
+>>>>>>> upstream/2.0.x
 void lcd_select_language(void);
 void set_english_to_eeprom(void);
 void set_chinese_to_eeprom(void);
 
+<<<<<<< HEAD
 /* Show ICON*/
+=======
+// Show ICO
+>>>>>>> upstream/2.0.x
 void ICON_Print(bool show);
 void ICON_Prepare(bool show);
 void ICON_Control(bool show);
@@ -328,7 +400,11 @@ void ICON_Pause(bool show);
 void ICON_Continue(bool show);
 void ICON_Stop(bool show);
 
+<<<<<<< HEAD
 /* Popup window tips */
+=======
+// Popup window tips
+>>>>>>> upstream/2.0.x
 #if HAS_HOTEND
   void Popup_Window_Temperature(const bool toohigh);
   void Popup_Window_ETempTooLow(void);
@@ -341,7 +417,11 @@ void Popup_Window_Leveling(void);
 void Goto_PrintProcess(void);
 void Goto_MainMenu(void);
 
+<<<<<<< HEAD
 /* Variable control */
+=======
+// Variable control
+>>>>>>> upstream/2.0.x
 void HMI_Move_X(void);
 void HMI_Move_Y(void);
 void HMI_Move_Z(void);
@@ -349,6 +429,7 @@ void HMI_Move_E(void);
 
 void HMI_Zoffset(void);
 
+<<<<<<< HEAD
 #if HAS_HOTEND
   void HMI_ETemp(void);
 #endif
@@ -358,6 +439,12 @@ void HMI_Zoffset(void);
 #if HAS_FAN
   void HMI_FanSpeed(void);
 #endif
+=======
+TERN_(HAS_HOTEND,     void HMI_ETemp(void));
+TERN_(HAS_HEATED_BED, void HMI_BedTemp(void));
+TERN_(HAS_FAN,        void HMI_FanSpeed(void));
+
+>>>>>>> upstream/2.0.x
 void HMI_PrintSpeed(void);
 
 void HMI_MaxFeedspeedXYZE(void);
@@ -368,16 +455,25 @@ void HMI_StepXYZE(void);
 void update_variable(void);
 void show_plus_or_minus(uint8_t size, uint16_t bColor, uint8_t iNum, uint8_t fNum, uint16_t x, uint16_t y, long value);
 
+<<<<<<< HEAD
 /* SD Card */
 void HMI_SDCardInit(void);
 void HMI_SDCardUpdate(void);
 
 /* Main Process */
+=======
+// SD Card
+void HMI_SDCardInit(void);
+void HMI_SDCardUpdate(void);
+
+// Main Process
+>>>>>>> upstream/2.0.x
 void Icon_print(bool value);
 void Icon_control(bool value);
 void Icon_temperature(bool value);
 void Icon_leveling(bool value);
 
+<<<<<<< HEAD
 /* Other */
 bool Pause_HeatStatus();
 void HMI_StartFrame(const bool with_update); // 开机画面
@@ -402,6 +498,32 @@ void HMI_MaxSpeed(void);          // 最大速度子菜单
 void HMI_MaxAcceleration(void);   // 最大加速度子菜单
 void HMI_MaxCorner(void);         // 最大拐角速度子菜单
 void HMI_Step(void);              // 传动比
+=======
+// Other
+bool Pause_HeatStatus();
+void HMI_StartFrame(const bool with_update); // startup screen
+void HMI_MainMenu(void);          // main process screen
+void HMI_SelectFile(void);        // file page
+void HMI_Printing(void);          // print page
+void HMI_Prepare(void);           // prepare page
+void HMI_Control(void);           // control page
+void HMI_Leveling(void);          // Level the page
+void HMI_AxisMove(void);          // Axis movement menu
+void HMI_Temperature(void);       // Temperature menu
+void HMI_Motion(void);            // Sports menu
+void HMI_Info(void);              // Information menu
+void HMI_Tune(void);              // Adjust the menu
+
+#if HAS_HOTEND
+  void HMI_PLAPreheatSetting(void); // PLA warm-up setting
+  void HMI_ABSPreheatSetting(void); // ABS warm-up setting
+#endif
+
+void HMI_MaxSpeed(void);          // Maximum speed submenu
+void HMI_MaxAcceleration(void);   // Maximum acceleration submenu
+void HMI_MaxCorner(void);         // Maximum corner speed submenu
+void HMI_Step(void);              // transmission ratio
+>>>>>>> upstream/2.0.x
 
 void HMI_Init(void);
 void DWIN_Update(void);

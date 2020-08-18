@@ -16,12 +16,20 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 #include "../../../../inc/MarlinConfigPre.h"
 
+<<<<<<< HEAD
 #if BOTH(TFT_LITTLE_VGL_UI, ADVANCED_PAUSE_FEATURE)
+=======
+#if BOTH(HAS_TFT_LVGL_UI, ADVANCED_PAUSE_FEATURE)
+>>>>>>> upstream/2.0.x
 
 #include "draw_ui.h"
 #include "lv_conf.h"
@@ -52,4 +60,8 @@ void lv_draw_pause_message(const PauseMessage msg) {
   }
 }
 
+<<<<<<< HEAD
 #endif // TFT_LITTLE_VGL_UI && ADVANCED_PAUSE_FEATURE
+=======
+#endif // HAS_TFT_LVGL_UI && ADVANCED_PAUSE_FEATURE
+>>>>>>> upstream/2.0.x

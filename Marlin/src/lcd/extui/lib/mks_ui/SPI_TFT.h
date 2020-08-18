@@ -16,7 +16,11 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 #pragma once
@@ -46,10 +50,18 @@ public:
   void LCD_WR_REG(uint8_t cmd);
   void LCD_WR_DATA(uint8_t data);
   void SetCursor(uint16_t x, uint16_t y);
+<<<<<<< HEAD
+=======
+  void SetPoint(uint16_t x, uint16_t y, uint16_t point);
+>>>>>>> upstream/2.0.x
   void SetWindows(uint16_t x, uint16_t y, uint16_t with, uint16_t height);
   void LCD_init();
   void LCD_clear(uint16_t color);
   void LCD_WriteRAM_Prepare();
+<<<<<<< HEAD
+=======
+  void LCD_Draw_Logo();
+>>>>>>> upstream/2.0.x
 };
 
 extern TFT SPI_TFT;

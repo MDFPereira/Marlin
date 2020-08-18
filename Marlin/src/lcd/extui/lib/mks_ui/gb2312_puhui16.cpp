@@ -16,16 +16,31 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 #include "../../../../inc/MarlinConfigPre.h"
 
+<<<<<<< HEAD
 #if ENABLED(TFT_LITTLE_VGL_UI)
 
 #include "../../../../MarlinCore.h"
 #include "lvgl.h"
 #include "pic_manager.h"
+=======
+#if HAS_TFT_LVGL_UI
+
+#include "pic_manager.h"
+#include <lvgl.h>
+
+#include "../../../../inc/MarlinConfig.h"
+
+#if HAS_SPI_FLASH_FONT
+>>>>>>> upstream/2.0.x
 
 typedef struct {
   uint16_t min;
@@ -44,10 +59,17 @@ typedef struct {
 } glyph_dsc_t;
 
 static x_header_t __g_xbf_hd = { .min = 0, .max = 0, .bpp = 0 };
+<<<<<<< HEAD
 static uint8_t __g_font_buf[75];
 
 static uint8_t *__user_font_getdata(int offset, int size) {
   //memset(__g_font_buf,0,sizeof(__g_font_buf));
+=======
+static uint8_t __g_font_buf[63];
+
+static uint8_t *__user_font_getdata(int offset, int size) {
+  //ZERO(__g_font_buf);
+>>>>>>> upstream/2.0.x
   get_spi_flash_data((char *)__g_font_buf, offset, size);
   return __g_font_buf;
   //return &buf_test[offset];
@@ -104,8 +126,17 @@ lv_font_t gb2312_puhui32;
 void init_gb2312_font() {
   gb2312_puhui32.get_glyph_bitmap = __user_font_get_bitmap;
   gb2312_puhui32.get_glyph_dsc = __user_font_get_glyph_dsc;
+<<<<<<< HEAD
   gb2312_puhui32.line_height = 25;
   gb2312_puhui32.base_line = 0;
 }
 
 #endif // TFT_LITTLE_VGL_UI
+=======
+  gb2312_puhui32.line_height = 21;
+  gb2312_puhui32.base_line = 0;
+}
+
+#endif // HAS_SPI_FLASH_FONT
+#endif // HAS_TFT_LVGL_UI
+>>>>>>> upstream/2.0.x

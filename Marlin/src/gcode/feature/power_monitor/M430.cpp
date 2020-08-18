@@ -1,6 +1,10 @@
 /**
  * Marlin 3D Printer Firmware
+<<<<<<< HEAD
  * Copyright (C) 2019 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+=======
+ * Copyright (C) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+>>>>>>> upstream/2.0.x
  *
  * Based on Sprinter and grbl.
  * Copyright (C) 2011 Camiel Gubbels / Erik van der Zalm
@@ -16,7 +20,11 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 
@@ -25,7 +33,11 @@
 #if HAS_POWER_MONITOR
 
 #include "../../../feature/power_monitor.h"
+<<<<<<< HEAD
 #include "../../../Marlin.h"
+=======
+#include "../../../MarlinCore.h"
+>>>>>>> upstream/2.0.x
 #include "../../gcode.h"
 
 /**

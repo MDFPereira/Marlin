@@ -16,7 +16,11 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 #pragma once
@@ -30,7 +34,11 @@ extern "C" { /* C-declarations for C++ */
 #define DIALOG_TYPE_REPRINT_NO_FILE                  2
 
 #define DIALOG_TYPE_M80_FAIL                         3  //**
+<<<<<<< HEAD
 #define DIALOG_TYPE_MESSEGE_ERR1                     4  //**
+=======
+#define DIALOG_TYPE_MESSAGE_ERR1                     4  //**
+>>>>>>> upstream/2.0.x
 
 #define DIALOG_TYPE_UPDATE_ESP_FIRMARE               5
 #define DIALOG_TYPE_UPDATE_ESP_DATA                  6
@@ -65,6 +73,13 @@ extern "C" { /* C-declarations for C++ */
 #define DIALOG_PAUSE_MESSAGE_HEATING                30
 #define DIALOG_PAUSE_MESSAGE_OPTION                 31
 
+<<<<<<< HEAD
+=======
+#define DIALOG_STORE_EEPROM_TIPS                    32
+#define DIALOG_READ_EEPROM_TIPS                     33
+#define DIALOG_REVERT_EEPROM_TIPS                   34
+
+>>>>>>> upstream/2.0.x
 #define BTN_OK_X      100
 #define BTN_OK_Y      180
 #define BTN_CANCEL_X  280

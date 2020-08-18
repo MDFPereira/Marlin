@@ -16,18 +16,37 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 #pragma once
 
 #ifdef __cplusplus
+<<<<<<< HEAD
 extern "C" { /* C-declarations for C++ */
 #endif
 
 #include <stdint.h>
 #include <string.h>
 #include "lvgl.h"
+=======
+  extern "C" { /* C-declarations for C++ */
+#endif
+
+#include <lvgl.h>
+
+#include <stdint.h>
+#include <string.h>
+
+// the colors of the last MKS Ui
+#undef LV_COLOR_BACKGROUND
+#define LV_COLOR_BACKGROUND LV_COLOR_MAKE(0x1A, 0x1A, 0x1A) // LV_COLOR_MAKE(0x00, 0x00, 0x00)
+
+>>>>>>> upstream/2.0.x
 #include "tft_multi_language.h"
 #include "draw_ready_print.h"
 #include "draw_language.h"
@@ -36,7 +55,11 @@ extern "C" { /* C-declarations for C++ */
 #include "draw_print_file.h"
 #include "draw_dialog.h"
 #include "draw_printing.h"
+<<<<<<< HEAD
 #include "draw_opration.h"
+=======
+#include "draw_operation.h"
+>>>>>>> upstream/2.0.x
 #include "draw_preHeat.h"
 #include "draw_extrusion.h"
 #include "draw_home.h"
@@ -46,7 +69,26 @@ extern "C" { /* C-declarations for C++ */
 #include "draw_change_speed.h"
 #include "draw_manuaLevel.h"
 #include "draw_error_message.h"
+<<<<<<< HEAD
 #include "printer_opration.h"
+=======
+#include "printer_operation.h"
+#include "draw_machine_para.h"
+#include "draw_machine_settings.h"
+#include "draw_motor_settings.h"
+#include "draw_advance_settings.h"
+#include "draw_acceleration_settings.h"
+#include "draw_number_key.h"
+#include "draw_jerk_settings.h"
+#include "draw_pause_position.h"
+#include "draw_step_settings.h"
+#include "draw_tmc_current_settings.h"
+#include "draw_eeprom_settings.h"
+#include "draw_max_feedrate_settings.h"
+#include "draw_tmc_step_mode_settings.h"
+
+#include "../../inc/MarlinConfigPre.h"
+>>>>>>> upstream/2.0.x
 
 #define TFT35
 
@@ -65,8 +107,13 @@ extern "C" { /* C-declarations for C++ */
 
   #define BUTTON_TEXT_Y_OFFSET    -20
 
+<<<<<<< HEAD
   #define TITLE_XPOS          3    //TFT_screen.title_xpos
   #define TITLE_YPOS          5    //TFT_screen.title_ypos
+=======
+  #define TITLE_XPOS          3    // TFT_screen.title_xpos
+  #define TITLE_YPOS          5    // TFT_screen.title_ypos
+>>>>>>> upstream/2.0.x
 
   #define FILE_BTN_CNT        6
 
@@ -76,17 +123,52 @@ extern "C" { /* C-declarations for C++ */
   #define FILE_PRE_PIC_X_OFFSET 8
   #define FILE_PRE_PIC_Y_OFFSET 0
 
+<<<<<<< HEAD
   #define PREVIEW_LITTLE_PIC_SIZE   40910//400*100+9*101+1
   #define PREVIEW_SIZE      202720//(PREVIEW_LITTLE_PIC_SIZE+800*200+201*9+1)
 
   #define GCFG_FLAG_VALUE   0xEE
 
 #else
+=======
+  #define PREVIEW_LITTLE_PIC_SIZE  40910  // 400*100+9*101+1
+  #define PREVIEW_SIZE      202720        // (PREVIEW_LITTLE_PIC_SIZE+800*200+201*9+1)
+
+  #define GCFG_FLAG_VALUE   0xEE
+
+  // machine parameter ui
+  #define PARA_UI_POS_X            10
+  #define PARA_UI_POS_Y            50
+
+  #define PARA_UI_SIZE_X          450
+  #define PARA_UI_SIZE_Y           40
+
+  #define PARA_UI_ARROW_V          12
+
+  #define PARA_UI_BACL_POS_X      400
+  #define PARA_UI_BACL_POS_Y      270
+
+  #define PARA_UI_TURN_PAGE_POS_X 320
+  #define PARA_UI_TURN_PAGE_POS_Y 270
+
+  #define PARA_UI_VALUE_SIZE_X    370
+  #define PARA_UI_VALUE_POS_X     400
+  #define PARA_UI_VALUE_V           5
+
+  #define PARA_UI_STATE_POS_X     380
+  #define PARA_UI_STATE_V           2
+
+#else // ifdef TFT35
+>>>>>>> upstream/2.0.x
 
   #define TFT_WIDTH     320
   #define TFT_HEIGHT    240
 
+<<<<<<< HEAD
 #endif
+=======
+#endif // ifdef TFT35
+>>>>>>> upstream/2.0.x
 
 extern char public_buf_m[100];
 extern char public_buf_l[30];
@@ -99,6 +181,12 @@ typedef struct {
   uint8_t from_flash_pic;
   uint8_t finish_power_off;
   uint8_t pause_reprint;
+<<<<<<< HEAD
+=======
+  float pausePosX;
+  float pausePosY;
+  float pausePosZ;
+>>>>>>> upstream/2.0.x
   uint32_t curFilesize;
 } CFG_ITMES;
 
@@ -106,7 +194,12 @@ typedef struct {
   uint8_t curTempType : 1,
           curSprayerChoose : 3,
           stepHeat : 4;
+<<<<<<< HEAD
   uint8_t leveling_first_time : 1;
+=======
+  uint8_t leveling_first_time : 1,
+          para_ui_page : 1;
+>>>>>>> upstream/2.0.x
   uint8_t extruStep;
   uint8_t extruSpeed;
   uint8_t print_state;
@@ -114,6 +207,10 @@ typedef struct {
   uint8_t waitEndMoves;
   uint16_t moveSpeed;
   float move_dist;
+<<<<<<< HEAD
+=======
+  uint8_t	F[4];
+>>>>>>> upstream/2.0.x
 } UI_CFG;
 
 typedef enum {
@@ -180,7 +277,15 @@ typedef enum {
   ENABLE_INVERT_UI,
   NUMBER_KEY_UI,
   BABY_STEP_UI,
+<<<<<<< HEAD
   ERROR_MESSAGE_UI
+=======
+  ERROR_MESSAGE_UI,
+  PAUSE_POS_UI,
+  TMC_CURRENT_UI,
+  TMC_MODE_UI,
+  EEPROM_SETTINGS_UI
+>>>>>>> upstream/2.0.x
 } DISP_STATE;
 
 typedef struct {
@@ -198,6 +303,49 @@ typedef struct {
 } PRINT_TIME;
 extern PRINT_TIME print_time;
 
+<<<<<<< HEAD
+=======
+typedef enum {
+  PrintAcceleration,
+  RetractAcceleration,
+  TravelAcceleration,
+  XAcceleration,
+  YAcceleration,
+  ZAcceleration,
+  E0Acceleration,
+  E1Acceleration,
+
+  XMaxFeedRate,
+  YMaxFeedRate,
+  ZMaxFeedRate,
+  E0MaxFeedRate,
+  E1MaxFeedRate,
+
+  XJerk,
+  YJerk,
+  ZJerk,
+  EJerk,
+
+  Xstep,
+  Ystep,
+  Zstep,
+  E0step,
+  E1step,
+
+  Xcurrent,
+  Ycurrent,
+  Zcurrent,
+  E0current,
+  E1current,
+
+  pause_pos_x,
+  pause_pos_y,
+  pause_pos_z
+
+}value_state;
+extern value_state value;
+
+>>>>>>> upstream/2.0.x
 extern CFG_ITMES gCfgItems;
 extern UI_CFG uiCfg;
 extern DISP_STATE disp_state;
@@ -205,8 +353,21 @@ extern DISP_STATE last_disp_state;
 extern DISP_STATE_STACK disp_state_stack;
 
 extern lv_style_t tft_style_scr;
+<<<<<<< HEAD
 extern lv_style_t tft_style_lable_pre;
 extern lv_style_t tft_style_lable_rel;
+=======
+extern lv_style_t tft_style_label_pre;
+extern lv_style_t tft_style_label_rel;
+extern lv_style_t style_line;
+extern lv_style_t style_para_value_pre;
+extern lv_style_t style_para_value_rel;
+extern lv_style_t style_num_key_pre;
+extern lv_style_t style_num_key_rel;
+extern lv_style_t style_num_text;
+
+extern lv_point_t line_points[4][2];
+>>>>>>> upstream/2.0.x
 
 extern void gCfgItems_init();
 extern void ui_cfg_init();
@@ -214,7 +375,13 @@ extern void tft_style_init();
 extern char *creat_title_text(void);
 extern void preview_gcode_prehandle(char *path);
 extern void update_spi_flash();
+<<<<<<< HEAD
 extern void disp_pre_gcode(int xpos_pixel, int ypos_pixel);
+=======
+#if HAS_GCODE_PREVIEW
+  extern void disp_pre_gcode(int xpos_pixel, int ypos_pixel);
+#endif
+>>>>>>> upstream/2.0.x
 extern void GUI_RefreshPage();
 extern void clear_cur_ui();
 extern void draw_return_ui();
@@ -223,6 +390,10 @@ extern void gCfg_to_spiFlah();
 extern void print_time_count();
 
 extern void LV_TASK_HANDLER();
+<<<<<<< HEAD
+=======
+extern void lv_ex_line(lv_obj_t * line, lv_point_t *points);
+>>>>>>> upstream/2.0.x
 
 #ifdef __cplusplus
 } /* C-declarations for C++ */

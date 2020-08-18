@@ -16,7 +16,11 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 #pragma once
@@ -26,7 +30,11 @@ extern "C" { /* C-declarations for C++ */
 #endif
 
 extern void lv_draw_ready_print(void);
+<<<<<<< HEAD
 extern void disp_test();
+=======
+extern void mks_disp_test();
+>>>>>>> upstream/2.0.x
 extern void disp_Limit_ok();
 extern void disp_Limit_error();
 extern void disp_det_error();

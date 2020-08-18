@@ -16,7 +16,11 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 #include "../../inc/MarlinConfig.h"
@@ -115,8 +119,12 @@ void GcodeSuite::M360() {
   xyz_pos_t cmin = dmin, cmax = dmax;
   apply_motion_limits(cmin);
   apply_motion_limits(cmax);
+<<<<<<< HEAD
   const xyz_pos_t lmin = dmin.asLogical(), lmax = dmax.asLogical(),
                   wmin = cmin.asLogical(), wmax = cmax.asLogical();
+=======
+  const xyz_pos_t wmin = cmin.asLogical(), wmax = cmax.asLogical();
+>>>>>>> upstream/2.0.x
 
   PGMSTR(MIN_STR, "Min");
   PGMSTR(MAX_STR, "Max");

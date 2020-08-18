@@ -16,7 +16,11 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 #pragma once
@@ -56,6 +60,7 @@
 
   #define PIC_NAME_MAX_LEN        50
 
+<<<<<<< HEAD
   #define LOGO_MAX_SIZE           (300*1024)//logo���ֵ
   #define TITLELOGO_MAX_SIZE      (150*1024)//logo���ֵ
   #define DEFAULT_VIEW_MAX_SIZE   (200*200*2)
@@ -68,11 +73,25 @@
   #define PIC_COUNTER_ADDR        0x008000  //ͼƬ������ֵ�洢��ַ
   #define PIC_LOGO_ADDR           0x009000  //ͼƬlogo�洢��ַ
   //#define PIC_DATA_ADDR         0x02f000  //ͼƬ���ݴ洢��ַ
+=======
+  #define LOGO_MAX_SIZE           (300*1024)
+  #define TITLELOGO_MAX_SIZE      (150*1024)
+  #define DEFAULT_VIEW_MAX_SIZE   (200*200*2)
+  #define FLASH_VIEW_MAX_SIZE     (200*200*2)
+
+  //Robin 2
+  #define PIC_NAME_ADDR           0x003000
+  #define PIC_SIZE_ADDR           0x007000
+  #define PIC_COUNTER_ADDR        0x008000
+  #define PIC_LOGO_ADDR           0x009000
+  //#define PIC_DATA_ADDR         0x02f000
+>>>>>>> upstream/2.0.x
 
   #define DEFAULT_VIEW_ADDR       0XC5800
   #define BAK_VIEW_ADDR           (DEFAULT_VIEW_ADDR+90*1024)
   #define PIC_ICON_LOGO_ADDR      (BAK_VIEW_ADDR+80*1024)
 
+<<<<<<< HEAD
   #define PIC_DATA_ADDR           (PIC_ICON_LOGO_ADDR+350*1024) //ͼƬ���ݴ洢��ַ//(800*240)
 
   // �ֿ�
@@ -83,11 +102,25 @@
   #define PER_PIC_MAX_SPACE       (32*1024) // Ϊ�˷�ֹ����Խ������⣬ÿ��СͼƬ�����仮��Ӧ��ȡ�ܹ�����4K��ֵ
 
   //
+=======
+  #define PIC_DATA_ADDR           (PIC_ICON_LOGO_ADDR+350*1024)
+
+  #define FONTINFOADDR            0x600000
+  #define UNIGBK_FLASH_ADDR       (FONTINFOADDR+4096) // 4*1024
+  #define GBK_FLASH_ADDR          (UNIGBK_FLASH_ADDR+180224) // 176*1024
+
+  #define PER_PIC_MAX_SPACE       (32*1024)
+
+>>>>>>> upstream/2.0.x
   union union32 {
     uint8_t bytes[4];
     uint32_t dwords;
   };
+<<<<<<< HEAD
   // ͼƬ��Ϣ�ṹ��
+=======
+
+>>>>>>> upstream/2.0.x
   struct pic_msg {
     uint8_t name[PIC_NAME_MAX_LEN];
     union union32 size;

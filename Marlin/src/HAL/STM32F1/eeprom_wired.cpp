@@ -14,7 +14,11 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 #ifdef __STM32F1__
@@ -68,7 +72,11 @@ bool PersistentStore::write_data(int &pos, const uint8_t *value, size_t size, ui
     crc16(crc, &v, 1);
     pos++;
     value++;
+<<<<<<< HEAD
   };
+=======
+  }
+>>>>>>> upstream/2.0.x
   return false;
 }
 

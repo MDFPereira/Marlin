@@ -16,13 +16,21 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+=======
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+>>>>>>> upstream/2.0.x
  *
  */
 
 #include "../../../../inc/MarlinConfig.h"
 
+<<<<<<< HEAD
 #if ENABLED(TFT_LITTLE_VGL_UI)
+=======
+#if HAS_TFT_LVGL_UI
+>>>>>>> upstream/2.0.x
 
   #if defined(ARDUINO_ARCH_STM32F1) && PIN_EXISTS(FSMC_CS) // FSMC on 100/144 pins SoCs
 
@@ -230,7 +238,11 @@
       return uint32_t(data);
     }
 
+<<<<<<< HEAD
     #if ENABLED(LCD_USE_DMA_FSMC)
+=======
+    #ifdef LCD_USE_DMA_FSMC
+>>>>>>> upstream/2.0.x
 
     void LCD_IO_WriteMultiple(uint16_t color, uint32_t count) {
       while (count > 0) {
@@ -270,4 +282,8 @@
 
     #endif // LCD_USE_DMA_FSMC
   #endif // ARDUINO_ARCH_STM32F1 && FSMC_CS_PIN
+<<<<<<< HEAD
 #endif // TFT_LITTLE_VGL_UI
+=======
+#endif // HAS_TFT_LVGL_UI
+>>>>>>> upstream/2.0.x
