@@ -65,6 +65,8 @@
 #include "../../../../gcode/gcode.h"
 >>>>>>> upstream/2.0.x
 
+#include "pic_manager.h"
+
 static lv_obj_t * scr;
 extern uint8_t sel_id;
 extern uint8_t once_flag;
