@@ -16,11 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-=======
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
->>>>>>> upstream/2.0.x
  *
  */
 
@@ -46,29 +42,6 @@
 //
 // EEPROM
 //
-<<<<<<< HEAD
-
-/* I2C */
-#define IIC_BL24CXX_EEPROM                        // EEPROM on I2C-0
-//#define E2END 0x3FFF                            // 16Kb (24c16)
-#define IIC_EEPROM_SDA                      PA11
-#define IIC_EEPROM_SCL                      PA12
-
-// SD EEPROM was in your original build, so...
-#define SDCARD_EEPROM_EMULATION
-
-/* SPI */
-//#define SPI_EEPROM                              // EEPROM on SPI-0
-//#define SPI_CHAN_EEPROM1        ?
-//#define SPI_EEPROM1_CS          ?
-// 2K EEPROM
-//#define SPI_EEPROM2_CS          ?
-// 32Mb FLASH
-//#define SPI_FLASH_CS            ?
-
-/* FLASH */
-//#define FLASH_EEPROM_EMULATION
-=======
 #if NO_EEPROM_SELECTED
   // FLASH
   //#define FLASH_EEPROM_EMULATION
@@ -95,7 +68,6 @@
   // 32Mb FLASH
   //#define SPI_FLASH_CS      ?
 #endif
->>>>>>> upstream/2.0.x
 
 //
 // Servos
@@ -112,8 +84,6 @@
 #define Z_MIN_PROBE_PIN                     PB1   // BLTouch IN
 
 //
-<<<<<<< HEAD
-=======
 // Filament Runout Sensor
 //
 #ifndef FIL_RUNOUT_PIN
@@ -121,7 +91,6 @@
 #endif
 
 //
->>>>>>> upstream/2.0.x
 // Steppers
 //
 #define X_ENABLE_PIN                        PC3

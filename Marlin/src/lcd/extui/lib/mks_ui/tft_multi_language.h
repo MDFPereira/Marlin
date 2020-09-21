@@ -16,11 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-=======
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
->>>>>>> upstream/2.0.x
  *
  */
 #pragma once
@@ -52,8 +48,6 @@ extern void disp_language_init();
 #define MULTI_LANGUAGE_ENABLE   1
 #define MULTI_LANGUAGE_DISABLE  0
 
-<<<<<<< HEAD
-=======
 typedef struct machine_common_disp{
   const char *default_value;
 
@@ -276,7 +270,6 @@ typedef struct machine_common_disp{
 
 extern machine_common_def machine_menu;
 
->>>>>>> upstream/2.0.x
 typedef struct common_menu_disp {
   const char *text_back;
   const char *dialog_confirm_title;
@@ -288,10 +281,7 @@ typedef struct common_menu_disp {
   const char *next;
   const char *previous;
 } common_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern common_menu_def common_menu;
 
 typedef struct main_menu_disp {
@@ -309,10 +299,7 @@ typedef struct main_menu_disp {
   const char *more;
   const char *machine_para;
 } main_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern main_menu_def main_menu;
 
 typedef struct preheat_menu_disp {
@@ -333,12 +320,8 @@ typedef struct preheat_menu_disp {
 
   const char *dialog_tips;
 
-<<<<<<< HEAD
-}preheat_menu_def;
-=======
 } preheat_menu_def;
 
->>>>>>> upstream/2.0.x
 extern preheat_menu_def preheat_menu;
 
 typedef struct move_menu_disp {
@@ -356,10 +339,7 @@ typedef struct move_menu_disp {
   const char *step_10mm;
   const char *back;
 } move_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern move_menu_def move_menu;
 
 typedef struct home_menu_disp {
@@ -371,10 +351,7 @@ typedef struct home_menu_disp {
   const char *stopmove;
   const char *back;
 } home_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern home_menu_def home_menu;
 
 typedef struct file_menu_disp {
@@ -387,12 +364,8 @@ typedef struct file_menu_disp {
   const char *no_file;
   const char *no_file_and_check;
 
-<<<<<<< HEAD
-}file_menu_def;
-=======
 } file_menu_def;
 
->>>>>>> upstream/2.0.x
 extern file_menu_def file_menu;
 
 typedef struct extrude_menu_disp {
@@ -415,10 +388,7 @@ typedef struct extrude_menu_disp {
   const char *temp_value;
   const char *temper_text;
 } extrude_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern extrude_menu_def extrude_menu;
 
 typedef struct leveling_menu_disp {
@@ -431,10 +401,7 @@ typedef struct leveling_menu_disp {
 
   char *back;
 } leveling_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern leveling_menu_def leveling_menu;
 
 typedef struct set_menu_disp {
@@ -450,15 +417,10 @@ typedef struct set_menu_disp {
   const char *shutdown;
   const char *language;
   const char *machine_para;
-<<<<<<< HEAD
-  const char *back;
-} set_menu_def;
-=======
   const char *eepromSet;
   const char *back;
 } set_menu_def;
 
->>>>>>> upstream/2.0.x
 extern set_menu_def set_menu;
 
 typedef struct filesys_menu_disp {
@@ -468,10 +430,7 @@ typedef struct filesys_menu_disp {
   const char *usb_sys;
   const char *back;
 } filesys_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern filesys_menu_def filesys_menu;
 
 typedef struct more_menu_disp {
@@ -479,10 +438,7 @@ typedef struct more_menu_disp {
   const char *zoffset;
   const char *back;
 } more_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern more_menu_def more_menu;
 
 typedef struct wifi_menu_disp {
@@ -499,10 +455,7 @@ typedef struct wifi_menu_disp {
   const char *back;
   const char *reconnect;
 } wifi_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern wifi_menu_def wifi_menu;
 
 typedef struct cloud_menu_disp {
@@ -518,10 +471,7 @@ typedef struct cloud_menu_disp {
   const char *back;
   const char *unbind_printer_tips;
 } cloud_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern cloud_menu_def cloud_menu;
 
 typedef struct about_menu_disp {
@@ -535,10 +485,7 @@ typedef struct about_menu_disp {
   const char *type_robin_mini;
   const char *back;
 } about_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern about_menu_def about_menu;
 
 typedef struct fan_menu_disp {
@@ -553,10 +500,7 @@ typedef struct fan_menu_disp {
   const char *state;
   const char *state_value;
 } fan_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern fan_menu_def fan_menu;
 
 typedef struct filament_menu_disp {
@@ -584,10 +528,7 @@ typedef struct filament_menu_disp {
   const char *filament_dialog_ok;
   const char *filament_dialog_back;
 } filament_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern filament_menu_def filament_menu;
 
 typedef struct language_menu {
@@ -608,10 +549,7 @@ typedef struct language_menu {
   const char *up;
   const char *back;
 } language_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern language_menu_def language_menu;
 
 typedef struct printing_menu_disp {
@@ -625,10 +563,7 @@ typedef struct printing_menu_disp {
   const char *resume;
   const char *stop;
 } printing_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern printing_menu_def printing_menu;
 
 typedef struct operation_menu_disp {
@@ -647,10 +582,7 @@ typedef struct operation_menu_disp {
   const char *back;
   const char *babystep;
 } operation_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern operation_menu_def operation_menu;
 
 typedef struct pause_menu_disp {
@@ -662,10 +594,7 @@ typedef struct pause_menu_disp {
   const char *filament;
   const char *more;
 } pause_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern pause_menu_def pause_menu;
 
 typedef struct speed_menu_disp {
@@ -681,10 +610,7 @@ typedef struct speed_menu_disp {
   const char *move_speed;
   const char *extrude_speed;
 } speed_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern speed_menu_def speed_menu;
 
 typedef struct printing_more_menu_disp {
@@ -696,10 +622,7 @@ typedef struct printing_more_menu_disp {
   const char *speed;
   const char *back;
 } printing_more_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern printing_more_menu_def printing_more_menu;
 
 typedef struct dialog_menu_disp {
@@ -714,10 +637,7 @@ typedef struct dialog_menu_disp {
   const char *tip1_print_file;
   const char *tip2_stop_file;
 } dialog_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern dialog_menu_def dialog_menu;
 
 typedef struct print_file_dialog_disp {
@@ -738,10 +658,7 @@ typedef struct print_file_dialog_disp {
   const char *reprint;
   const char *wifi_enable_tips;
 } print_file_dialog_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern print_file_dialog_menu_def print_file_dialog_menu;
 
 typedef struct zoffset_menu_disp {
@@ -753,10 +670,7 @@ typedef struct zoffset_menu_disp {
   const char *step1;
   const char *back;
 } zoffset_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern zoffset_menu_def zoffset_menu;
 
 typedef struct tool_menu_disp {
@@ -771,10 +685,7 @@ typedef struct tool_menu_disp {
   const char *more;
   const char *back;
 } tool_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern tool_menu_def tool_menu;
 
 typedef struct MachinePara_menu_disp {
@@ -785,10 +696,7 @@ typedef struct MachinePara_menu_disp {
   const char *AdvanceSetting;
   //const char *back;
 } MachinePara_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern MachinePara_menu_def MachinePara_menu;
 
 typedef struct MachineSettings_menu_disp {
@@ -801,10 +709,7 @@ typedef struct MachineSettings_menu_disp {
   const char *leveling;
   const char *back;
 } MachineSettings_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern MachineSettings_menu_def MachineSettings_menu;
 
 typedef struct TemperatureSettings_menu_disp {
@@ -814,10 +719,7 @@ typedef struct TemperatureSettings_menu_disp {
   const char *preheat;
   const char *back;
 } TemperatureSettings_menu_def;
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/2.0.x
 extern TemperatureSettings_menu_def TemperatureSettings_menu;
 
 typedef struct pause_msg_disp {
@@ -835,10 +737,6 @@ typedef struct pause_msg_disp {
   const char *purgeMore;
   const char *continuePrint;
 } pause_msg_def;
-<<<<<<< HEAD
-extern pause_msg_def pause_msg_menu;
-
-=======
 
 extern pause_msg_def pause_msg_menu;
 
@@ -853,24 +751,11 @@ typedef struct eeprom_disp{
 } eeprom_def;
 
 extern eeprom_def eeprom_menu;
->>>>>>> upstream/2.0.x
 /*****************************************/
 //********************************************//
 //#if defined(TFT70)
 //
 //#elif defined(TFT35)
-<<<<<<< HEAD
-#define TEXT_VALUE                  "%d/%d"
-//#endif
-
-#define TEXT_VALUE_T                  ": %d℃"
-#define TEXT_VALUE_mm                 ": %dmm"
-#define TEXT_VALUE_cm                 ": %dcm"
-#define TEXT_VALUE_m                  ": %dm"
-
-#define TEMP_UNIT_SYBOL               "%d℃"
-#define FLOAT_TEMP_UNIT_SYBOL               "%.1f℃"
-=======
 #define TEXT_VALUE          "%d/%d"
 //#endif
 
@@ -881,7 +766,6 @@ extern eeprom_def eeprom_menu;
 
 #define TEMP_UNIT_SYBOL       "%d℃"
 #define FLOAT_TEMP_UNIT_SYBOL "%.1f℃"
->>>>>>> upstream/2.0.x
 
 #define TEXT_1C             "1℃"
 #define TEXT_5C             "5℃"
@@ -913,11 +797,7 @@ extern eeprom_def eeprom_menu;
 #define LANGUAGE_JP         "日本語"
 #define LANGUAGE_GE         "Deutsch"
 #define LANGUAGE_FR         "français"
-<<<<<<< HEAD
-#define LANGUAGE_IT         "Italia"
-=======
 #define LANGUAGE_IT         "Italiano"
->>>>>>> upstream/2.0.x
 #define LANGUAGE_PR         "português"
 #define LANGUAGE_KR         "Korean"
 #define LANGUAGE_BR         "Brazil"

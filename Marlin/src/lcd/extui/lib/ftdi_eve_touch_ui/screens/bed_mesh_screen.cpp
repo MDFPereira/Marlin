@@ -16,11 +16,7 @@
  *   GNU General Public License for more details.                           *
  *                                                                          *
  *   To view a copy of the GNU General Public License, go to the following  *
-<<<<<<< HEAD
- *   location: <http://www.gnu.org/licenses/>.                              *
-=======
  *   location: <https://www.gnu.org/licenses/>.                              *
->>>>>>> upstream/2.0.x
  ****************************************************************************/
 
 #include "../config.h"

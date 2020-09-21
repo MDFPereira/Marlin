@@ -41,10 +41,6 @@
     "use_1200bps_touch": false,
     "wait_for_upload_port": false
   },
-<<<<<<< HEAD
-  "url": "http://www.st.com/en/microcontrollers/stm32f407zg.html",
-=======
   "url": "https://www.st.com/en/microcontrollers-microprocessors/stm32f407zg.html",
->>>>>>> upstream/2.0.x
   "vendor": "Generic"
 }

@@ -16,11 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-=======
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
->>>>>>> upstream/2.0.x
  *
  */
 #pragma once
@@ -102,11 +98,8 @@
 #define MOTOR_OFF_TEXT_RU               "отклмотор"
 #define MOTOR_OFF_XY_TEXT_RU            "Off-XY"
 #define SHUTDOWN_TEXT_RU                "выключение"
-<<<<<<< HEAD
-=======
 #define MACHINE_PARA_RU                 "конфиг"
 #define EEPROM_SETTINGS_RU              "Eeprom Set"
->>>>>>> upstream/2.0.x
 
 #define U_DISK_TEXT_RU                  "U диск"
 #define SD_CARD_TEXT_RU                 "SD диск"
@@ -266,21 +259,6 @@
 #define DIALOG_REPRINT_RU                   "Print again"
 #define DIALOG_WIFI_ENABLE_TIPS_RU          "The wifi module is being configured,\nplease wait a moment....."
 
-<<<<<<< HEAD
-#define MESSEGE_PAUSING_RU                  "Стоянка..."
-#define MESSEGE_CHANGING_RU                 "Подождите, пока начнется смена филамента"
-#define MESSEGE_UNLOAD_RU                   "Дождитесь выгрузки нити"
-#define MESSEGE_WAITING_RU                  "Нажмите кнопку,чтобы возобновить печать"
-#define MESSEGE_INSERT_RU                   "Вставьте нить и нажмите кнопку,чтобы продолжить"
-#define MESSEGE_LOAD_RU                     "Дождитесь загрузки нити"
-#define MESSEGE_PURGE_RU                    "Дождитесь чистки нити"
-#define MESSEGE_RESUME_RU                   "Подождите,пока печать возобновится ..."
-#define MESSEGE_HEAT_RU                     "Нажмите кнопку, чтобы нагреть форсунку"
-#define MESSEGE_HEATING_RU                  "Подогрев форсунки Пожалуйста, подождите ..."
-#define MESSEGE_OPTION_RU                   "Очистить больше или продолжить печать?"
-#define MESSEGE_PURGE_MORE_RU               "чистка"
-#define MESSEGE_CONTINUE_PRINT_RU           "Распечатать"
-=======
 #define MESSAGE_PAUSING_RU            "Стоянка..."
 #define MESSAGE_CHANGING_RU           "Подождите, пока начнется смена филамента"
 #define MESSAGE_UNLOAD_RU             "Дождитесь выгрузки нити"
@@ -302,4 +280,3 @@
 #define EEPROM_STORE_TIPS_RU          "Сохранить настройки в EEPROM?"
 #define EEPROM_READ_TIPS_RU           "Читать настройки из EEPROM?"
 #define EEPROM_REVERT_TIPS_RU         "Revert settings to factory defaults?"
->>>>>>> upstream/2.0.x

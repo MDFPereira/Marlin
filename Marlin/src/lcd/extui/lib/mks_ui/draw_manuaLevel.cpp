@@ -16,20 +16,12 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-=======
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
->>>>>>> upstream/2.0.x
  *
  */
 #include "../../../../inc/MarlinConfigPre.h"
 
-<<<<<<< HEAD
-#if ENABLED(TFT_LITTLE_VGL_UI)
-=======
 #if HAS_TFT_LVGL_UI
->>>>>>> upstream/2.0.x
 
 #include "../../../../MarlinCore.h"
 #include "lv_conf.h"
@@ -43,22 +35,12 @@
 //static lv_obj_t *buttonMoveZ,*buttonTest,*buttonZ0,*buttonStop,*buttonReturn;
 static lv_obj_t * scr;
 
-<<<<<<< HEAD
-#define ID_M_POINT1             1
-#define ID_M_POINT2             2
-#define ID_M_POINT3             3
-#define ID_M_POINT4             4
-#define ID_M_POINT5             5
-
-#define ID_MANUAL_RETURN                6
-=======
 #define ID_M_POINT1      1
 #define ID_M_POINT2      2
 #define ID_M_POINT3      3
 #define ID_M_POINT4      4
 #define ID_M_POINT5      5
 #define ID_MANUAL_RETURN 6
->>>>>>> upstream/2.0.x
 
 static void event_handler(lv_obj_t * obj, lv_event_t event) {
   switch (obj->mks_obj_id) {
@@ -70,18 +52,6 @@ static void event_handler(lv_obj_t * obj, lv_event_t event) {
 
         if (queue.length == 0) {
           if (uiCfg.leveling_first_time) {
-<<<<<<< HEAD
-            queue.enqueue_one_P(PSTR("G28"));
-            uiCfg.leveling_first_time = 0;
-          }
-
-          queue.enqueue_one_P(PSTR("G1 Z10"));
-
-          memset(public_buf_l, 0, sizeof(public_buf_l));
-          sprintf(public_buf_l, "G1 X%d Y%d", X_MIN_POS + 30, Y_MIN_POS + 30);
-          queue.enqueue_one_P(PSTR(public_buf_l));
-          queue.enqueue_one_P(PSTR("G1 Z0"));
-=======
             queue.enqueue_now_P(PSTR("G28"));
             uiCfg.leveling_first_time = 0;
           }
@@ -92,7 +62,6 @@ static void event_handler(lv_obj_t * obj, lv_event_t event) {
           sprintf_P(public_buf_l, PSTR("G1 X%d Y%d"), X_MIN_POS + 30, Y_MIN_POS + 30);
           queue.enqueue_one_now(public_buf_l);
           queue.enqueue_now_P(PSTR("G1 Z0"));
->>>>>>> upstream/2.0.x
         }
       }
       break;
@@ -103,18 +72,6 @@ static void event_handler(lv_obj_t * obj, lv_event_t event) {
       else if (event == LV_EVENT_RELEASED) {
         if (queue.length == 0) {
           if (uiCfg.leveling_first_time) {
-<<<<<<< HEAD
-            queue.enqueue_one_P(PSTR("G28"));
-            uiCfg.leveling_first_time = 0;
-          }
-
-          queue.enqueue_one_P(PSTR("G1 Z10"));
-
-          memset(public_buf_l, 0, sizeof(public_buf_l));
-          sprintf(public_buf_l, "G1 X%d Y%d", X_MAX_POS - 30, Y_MIN_POS + 30);
-          queue.enqueue_one_P(PSTR(public_buf_l));
-          queue.enqueue_one_P(PSTR("G1 Z0"));
-=======
             queue.enqueue_now_P(PSTR("G28"));
             uiCfg.leveling_first_time = 0;
           }
@@ -125,7 +82,6 @@ static void event_handler(lv_obj_t * obj, lv_event_t event) {
           sprintf_P(public_buf_l, PSTR("G1 X%d Y%d"), X_MAX_POS - 30, Y_MIN_POS + 30);
           queue.enqueue_one_now(public_buf_l);
           queue.enqueue_now_P(PSTR("G1 Z0"));
->>>>>>> upstream/2.0.x
         }
       }
       break;
@@ -136,18 +92,6 @@ static void event_handler(lv_obj_t * obj, lv_event_t event) {
       else if (event == LV_EVENT_RELEASED) {
         if (queue.length == 0) {
           if (uiCfg.leveling_first_time) {
-<<<<<<< HEAD
-            queue.enqueue_one_P(PSTR("G28"));
-            uiCfg.leveling_first_time = 0;
-          }
-
-          queue.enqueue_one_P(PSTR("G1 Z10"));
-
-          memset(public_buf_l, 0, sizeof(public_buf_l));
-          sprintf(public_buf_l, "G1 X%d Y%d", X_MAX_POS - 30, Y_MAX_POS - 30);
-          queue.enqueue_one_P(PSTR(public_buf_l));
-          queue.enqueue_one_P(PSTR("G1 Z0"));
-=======
             queue.enqueue_now_P(PSTR("G28"));
             uiCfg.leveling_first_time = 0;
           }
@@ -158,7 +102,6 @@ static void event_handler(lv_obj_t * obj, lv_event_t event) {
           sprintf_P(public_buf_l, PSTR("G1 X%d Y%d"), X_MAX_POS - 30, Y_MAX_POS - 30);
           queue.enqueue_one_now(public_buf_l);
           queue.enqueue_now_P(PSTR("G1 Z0"));
->>>>>>> upstream/2.0.x
         }
       }
 
@@ -170,18 +113,6 @@ static void event_handler(lv_obj_t * obj, lv_event_t event) {
       else if (event == LV_EVENT_RELEASED) {
         if (queue.length == 0) {
           if (uiCfg.leveling_first_time) {
-<<<<<<< HEAD
-            queue.enqueue_one_P(PSTR("G28"));
-            uiCfg.leveling_first_time = 0;
-          }
-
-          queue.enqueue_one_P(PSTR("G1 Z10"));
-
-          memset(public_buf_l, 0, sizeof(public_buf_l));
-          sprintf(public_buf_l, "G1 X%d Y%d", X_MIN_POS + 30, Y_MAX_POS - 30);
-          queue.enqueue_one_P(PSTR(public_buf_l));
-          queue.enqueue_one_P(PSTR("G1 Z0"));
-=======
             queue.enqueue_now_P(PSTR("G28"));
             uiCfg.leveling_first_time = 0;
           }
@@ -192,7 +123,6 @@ static void event_handler(lv_obj_t * obj, lv_event_t event) {
           sprintf_P(public_buf_l, PSTR("G1 X%d Y%d"), X_MIN_POS + 30, Y_MAX_POS - 30);
           queue.enqueue_one_now(public_buf_l);
           queue.enqueue_now_P(PSTR("G1 Z0"));
->>>>>>> upstream/2.0.x
         }
       }
       break;
@@ -203,18 +133,6 @@ static void event_handler(lv_obj_t * obj, lv_event_t event) {
       else if (event == LV_EVENT_RELEASED) {
         if (queue.length == 0) {
           if (uiCfg.leveling_first_time) {
-<<<<<<< HEAD
-            queue.enqueue_one_P(PSTR("G28"));
-            uiCfg.leveling_first_time = 0;
-          }
-
-          queue.enqueue_one_P(PSTR("G1 Z10"));
-
-          memset(public_buf_l, 0, sizeof(public_buf_l));
-          sprintf(public_buf_l, "G1 X%d Y%d", X_BED_SIZE / 2, Y_BED_SIZE / 2);
-          queue.enqueue_one_P(PSTR(public_buf_l));
-          queue.enqueue_one_P(PSTR("G1 Z0"));
-=======
             queue.enqueue_now_P(PSTR("G28"));
             uiCfg.leveling_first_time = 0;
           }
@@ -225,7 +143,6 @@ static void event_handler(lv_obj_t * obj, lv_event_t event) {
           sprintf_P(public_buf_l, PSTR("G1 X%d Y%d"), X_BED_SIZE / 2, Y_BED_SIZE / 2);
           queue.enqueue_one_now(public_buf_l);
           queue.enqueue_now_P(PSTR("G1 Z0"));
->>>>>>> upstream/2.0.x
         }
       }
 
@@ -239,10 +156,6 @@ static void event_handler(lv_obj_t * obj, lv_event_t event) {
         lv_draw_tool();
       }
       break;
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/2.0.x
   }
 }
 
@@ -259,22 +172,14 @@ void lv_draw_manualLevel(void) {
 
   scr = lv_obj_create(NULL, NULL);
 
-<<<<<<< HEAD
-  //static lv_style_t tool_style;
-=======
   // static lv_style_t tool_style;
->>>>>>> upstream/2.0.x
 
   lv_obj_set_style(scr, &tft_style_scr);
   lv_scr_load(scr);
   lv_obj_clean(scr);
 
   lv_obj_t * title = lv_label_create(scr, NULL);
-<<<<<<< HEAD
-  lv_obj_set_style(title, &tft_style_lable_rel);
-=======
   lv_obj_set_style(title, &tft_style_label_rel);
->>>>>>> upstream/2.0.x
   lv_obj_set_pos(title, TITLE_XPOS, TITLE_YPOS);
   lv_label_set_text(title, creat_title_text());
 
@@ -288,46 +193,6 @@ void lv_draw_manualLevel(void) {
   buttonPoint3 = lv_imgbtn_create(scr, NULL);
   buttonPoint4 = lv_imgbtn_create(scr, NULL);
   buttonPoint5 = lv_imgbtn_create(scr, NULL);
-<<<<<<< HEAD
-  buttonBack = lv_imgbtn_create(scr, NULL);
-
-  lv_obj_set_event_cb_mks(buttonPoint1, event_handler, ID_M_POINT1, "bmp_Leveling1.bin", 0);
-  lv_imgbtn_set_src(buttonPoint1, LV_BTN_STATE_REL, &bmp_pic);
-  lv_imgbtn_set_src(buttonPoint1, LV_BTN_STATE_PR, &bmp_pic);
-  lv_imgbtn_set_style(buttonPoint1, LV_BTN_STATE_PR, &tft_style_lable_pre);
-  lv_imgbtn_set_style(buttonPoint1, LV_BTN_STATE_REL, &tft_style_lable_rel);
-  lv_obj_clear_protect(buttonPoint1, LV_PROTECT_FOLLOW);
-  #if 1
-    lv_obj_set_event_cb_mks(buttonPoint2, event_handler, ID_M_POINT2, "bmp_Leveling2.bin", 0);
-    lv_imgbtn_set_src(buttonPoint2, LV_BTN_STATE_REL, &bmp_pic);
-    lv_imgbtn_set_src(buttonPoint2, LV_BTN_STATE_PR, &bmp_pic);
-    lv_imgbtn_set_style(buttonPoint2, LV_BTN_STATE_PR, &tft_style_lable_pre);
-    lv_imgbtn_set_style(buttonPoint2, LV_BTN_STATE_REL, &tft_style_lable_rel);
-
-    lv_obj_set_event_cb_mks(buttonPoint3, event_handler, ID_M_POINT3, "bmp_Leveling3.bin", 0);
-    lv_imgbtn_set_src(buttonPoint3, LV_BTN_STATE_REL, &bmp_pic);
-    lv_imgbtn_set_src(buttonPoint3, LV_BTN_STATE_PR, &bmp_pic);
-    lv_imgbtn_set_style(buttonPoint3, LV_BTN_STATE_PR, &tft_style_lable_pre);
-    lv_imgbtn_set_style(buttonPoint3, LV_BTN_STATE_REL, &tft_style_lable_rel);
-
-    lv_obj_set_event_cb_mks(buttonPoint4, event_handler, ID_M_POINT4, "bmp_Leveling4.bin", 0);
-    lv_imgbtn_set_src(buttonPoint4, LV_BTN_STATE_REL, &bmp_pic);
-    lv_imgbtn_set_src(buttonPoint4, LV_BTN_STATE_PR, &bmp_pic);
-    lv_imgbtn_set_style(buttonPoint4, LV_BTN_STATE_PR, &tft_style_lable_pre);
-    lv_imgbtn_set_style(buttonPoint4, LV_BTN_STATE_REL, &tft_style_lable_rel);
-
-    lv_obj_set_event_cb_mks(buttonPoint5, event_handler, ID_M_POINT5, "bmp_Leveling5.bin", 0);
-    lv_imgbtn_set_src(buttonPoint5, LV_BTN_STATE_REL, &bmp_pic);
-    lv_imgbtn_set_src(buttonPoint5, LV_BTN_STATE_PR, &bmp_pic);
-    lv_imgbtn_set_style(buttonPoint5, LV_BTN_STATE_PR, &tft_style_lable_pre);
-    lv_imgbtn_set_style(buttonPoint5, LV_BTN_STATE_REL, &tft_style_lable_rel);
-
-    lv_obj_set_event_cb_mks(buttonBack, event_handler, ID_MANUAL_RETURN, "bmp_Return.bin", 0);
-    lv_imgbtn_set_src(buttonBack, LV_BTN_STATE_REL, &bmp_pic);
-    lv_imgbtn_set_src(buttonBack, LV_BTN_STATE_PR, &bmp_pic);
-    lv_imgbtn_set_style(buttonBack, LV_BTN_STATE_PR, &tft_style_lable_pre);
-    lv_imgbtn_set_style(buttonBack, LV_BTN_STATE_REL, &tft_style_lable_rel);
-=======
   buttonBack   = lv_imgbtn_create(scr, NULL);
 
   lv_obj_set_event_cb_mks(buttonPoint1, event_handler, ID_M_POINT1, "bmp_leveling1.bin", 0);
@@ -366,20 +231,14 @@ void lv_draw_manualLevel(void) {
     lv_imgbtn_set_src(buttonBack, LV_BTN_STATE_PR, &bmp_pic);
     lv_imgbtn_set_style(buttonBack, LV_BTN_STATE_PR, &tft_style_label_pre);
     lv_imgbtn_set_style(buttonBack, LV_BTN_STATE_REL, &tft_style_label_rel);
->>>>>>> upstream/2.0.x
   #endif
 
   lv_obj_set_pos(buttonPoint1, INTERVAL_V, titleHeight);
   lv_obj_set_pos(buttonPoint2, BTN_X_PIXEL + INTERVAL_V * 2, titleHeight);
   lv_obj_set_pos(buttonPoint3, BTN_X_PIXEL * 2 + INTERVAL_V * 3, titleHeight);
   lv_obj_set_pos(buttonPoint4, BTN_X_PIXEL * 3 + INTERVAL_V * 4, titleHeight);
-<<<<<<< HEAD
-  lv_obj_set_pos(buttonPoint5, INTERVAL_V,  BTN_Y_PIXEL + INTERVAL_H + titleHeight);
-  lv_obj_set_pos(buttonBack, BTN_X_PIXEL * 3 + INTERVAL_V * 4,  BTN_Y_PIXEL + INTERVAL_H + titleHeight);
-=======
   lv_obj_set_pos(buttonPoint5, INTERVAL_V, BTN_Y_PIXEL + INTERVAL_H + titleHeight);
   lv_obj_set_pos(buttonBack, BTN_X_PIXEL * 3 + INTERVAL_V * 4, BTN_Y_PIXEL + INTERVAL_H + titleHeight);
->>>>>>> upstream/2.0.x
 
   /*Create a label on the Image button*/
   lv_btn_set_layout(buttonPoint1, LV_LAYOUT_OFF);
@@ -394,12 +253,7 @@ void lv_draw_manualLevel(void) {
   lv_obj_t * label_Point3 = lv_label_create(buttonPoint3, NULL);
   lv_obj_t * label_Point4 = lv_label_create(buttonPoint4, NULL);
   lv_obj_t * label_Point5 = lv_label_create(buttonPoint5, NULL);
-<<<<<<< HEAD
-  lv_obj_t * label_Back = lv_label_create(buttonBack, NULL);
-
-=======
   lv_obj_t * label_Back   = lv_label_create(buttonBack, NULL);
->>>>>>> upstream/2.0.x
 
   if (gCfgItems.multiple_language != 0) {
     lv_label_set_text(label_Point1, leveling_menu.position1);
@@ -424,8 +278,4 @@ void lv_draw_manualLevel(void) {
 
 void lv_clear_manualLevel() { lv_obj_del(scr); }
 
-<<<<<<< HEAD
-#endif // TFT_LITTLE_VGL_UI
-=======
 #endif // HAS_TFT_LVGL_UI
->>>>>>> upstream/2.0.x

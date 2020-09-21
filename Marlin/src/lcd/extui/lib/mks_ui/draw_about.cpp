@@ -16,20 +16,12 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-=======
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
->>>>>>> upstream/2.0.x
  *
  */
 #include "../../../../inc/MarlinConfigPre.h"
 
-<<<<<<< HEAD
-#if ENABLED(TFT_LITTLE_VGL_UI)
-=======
 #if HAS_TFT_LVGL_UI
->>>>>>> upstream/2.0.x
 
 #include "lv_conf.h"
 #include "draw_ui.h"
@@ -75,11 +67,7 @@ void lv_draw_about(void) {
   lv_obj_clean(scr);
 
   lv_obj_t * title = lv_label_create(scr, NULL);
-<<<<<<< HEAD
-  lv_obj_set_style(title, &tft_style_lable_rel);
-=======
   lv_obj_set_style(title, &tft_style_label_rel);
->>>>>>> upstream/2.0.x
   lv_obj_set_pos(title, TITLE_XPOS, TITLE_YPOS);
   lv_label_set_text(title, creat_title_text());
 
@@ -91,16 +79,6 @@ void lv_draw_about(void) {
   buttonBack = lv_imgbtn_create(scr, NULL);
 
   #if 1
-<<<<<<< HEAD
-    lv_obj_set_event_cb_mks(buttonBack, event_handler, ID_A_RETURN, "bmp_Return.bin", 0);
-    lv_imgbtn_set_src(buttonBack, LV_BTN_STATE_REL, &bmp_pic);
-    lv_imgbtn_set_src(buttonBack, LV_BTN_STATE_PR, &bmp_pic);
-    lv_imgbtn_set_style(buttonBack, LV_BTN_STATE_PR, &tft_style_lable_pre);
-    lv_imgbtn_set_style(buttonBack, LV_BTN_STATE_REL, &tft_style_lable_rel);
-  #endif
-
-  lv_obj_set_pos(buttonBack, BTN_X_PIXEL * 3 + INTERVAL_V * 4,  BTN_Y_PIXEL + INTERVAL_H + titleHeight);
-=======
     lv_obj_set_event_cb_mks(buttonBack, event_handler, ID_A_RETURN, "bmp_return.bin", 0);
     lv_imgbtn_set_src(buttonBack, LV_BTN_STATE_REL, &bmp_pic);
     lv_imgbtn_set_src(buttonBack, LV_BTN_STATE_PR, &bmp_pic);
@@ -109,7 +87,6 @@ void lv_draw_about(void) {
   #endif
 
   lv_obj_set_pos(buttonBack, BTN_X_PIXEL * 3 + INTERVAL_V * 4, BTN_Y_PIXEL + INTERVAL_H + titleHeight);
->>>>>>> upstream/2.0.x
   lv_btn_set_layout(buttonBack, LV_LAYOUT_OFF);
   /*Create a label on the Image button*/
 
@@ -121,29 +98,6 @@ void lv_draw_about(void) {
   }
 
   fw_version = lv_label_create(scr, NULL);
-<<<<<<< HEAD
-  lv_obj_set_style(fw_version, &tft_style_lable_rel);
-  lv_label_set_text(fw_version, "Version: V_2.0.5.3");
-  lv_obj_align(fw_version, NULL, LV_ALIGN_CENTER, 0, -60);
-
-  fw_type = lv_label_create(scr, NULL);
-  lv_obj_set_style(fw_type, &tft_style_lable_rel);
-  #if (MOTHERBOARD == BOARD_MKS_ROBIN_PRO)
-    lv_label_set_text(fw_type, "Firmware: Robin_Pro35");
-  #elif (MOTHERBOARD == BOARD_MKS_ROBIN_NANO)
-    lv_label_set_text(fw_type, "Firmware: Robin_Nano35");
-  #endif
-  lv_obj_align(fw_type, NULL, LV_ALIGN_CENTER, 0, -20);
-
-  board = lv_label_create(scr, NULL);
-  lv_obj_set_style(board, &tft_style_lable_rel);
-  #if (MOTHERBOARD == BOARD_MKS_ROBIN_PRO)
-    lv_label_set_text(board, "Board: MKS Robin pro");
-  #elif (MOTHERBOARD == BOARD_MKS_ROBIN_NANO)
-    lv_label_set_text(board, "Board: MKS Robin nano");
-  #endif
-
-=======
   lv_obj_set_style(fw_version, &tft_style_label_rel);
   lv_label_set_text(fw_version, SHORT_BUILD_VERSION);
   lv_obj_align(fw_version, NULL, LV_ALIGN_CENTER, 0, -60);
@@ -164,14 +118,9 @@ void lv_draw_about(void) {
   board = lv_label_create(scr, NULL);
   lv_obj_set_style(board, &tft_style_label_rel);
   lv_label_set_text(board, "Board: " BOARD_INFO_NAME);
->>>>>>> upstream/2.0.x
   lv_obj_align(board, NULL, LV_ALIGN_CENTER, 0, 20);
 }
 
 void lv_clear_about() { lv_obj_del(scr); }
 
-<<<<<<< HEAD
-#endif // TFT_LITTLE_VGL_UI
-=======
 #endif // HAS_TFT_LVGL_UI
->>>>>>> upstream/2.0.x

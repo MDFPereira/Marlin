@@ -16,11 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-=======
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
->>>>>>> upstream/2.0.x
  *
  */
 
@@ -30,18 +26,11 @@
 
 #include "../../../../inc/MarlinConfigPre.h"
 
-<<<<<<< HEAD
-#if ENABLED(TFT_LITTLE_VGL_UI)
-
-#include "lv_conf.h"
-#include "draw_ui.h"
-=======
 #if HAS_TFT_LVGL_UI
 
 #include "lv_conf.h"
 #include "draw_ui.h"
 
->>>>>>> upstream/2.0.x
 //#include "../lvgl/src/lv_objx/lv_imgbtn.h"
 //#include "../lvgl/src/lv_objx/lv_img.h"
 //#include "../lvgl/src/lv_core/lv_disp.h"
@@ -60,10 +49,7 @@
 #if ENABLED(PARK_HEAD_ON_PAUSE)
   #include "../../../../feature/pause.h"
 #endif
-<<<<<<< HEAD
-=======
 #include "../../../../gcode/gcode.h"
->>>>>>> upstream/2.0.x
 
 #include "pic_manager.h"
 
@@ -79,13 +65,9 @@ static void btn_ok_event_cb(lv_obj_t * btn, lv_event_t event) {
   }
   else if (event == LV_EVENT_RELEASED) {
     if (DialogType == DIALOG_TYPE_PRINT_FILE) {
-<<<<<<< HEAD
-      preview_gcode_prehandle(list_file.file_name[sel_id]);
-=======
       #if HAS_GCODE_PREVIEW
         preview_gcode_prehandle(list_file.file_name[sel_id]);
       #endif
->>>>>>> upstream/2.0.x
       reset_print_time();
       start_print_time();
 
@@ -94,38 +76,6 @@ static void btn_ok_event_cb(lv_obj_t * btn, lv_event_t event) {
       lv_draw_printing();
 
       #if ENABLED(SDSUPPORT)
-<<<<<<< HEAD
-      if (gcode_preview_over != 1) {
-        char *cur_name;
-        cur_name = strrchr(list_file.file_name[sel_id], '/');
-
-        SdFile file, *curDir;
-        card.endFilePrint();
-        const char * const fname = card.diveToFile(true, curDir, cur_name);
-        if (!fname) return;
-        if (file.open(curDir, fname, O_READ)) {
-          gCfgItems.curFilesize = file.fileSize();
-          file.close();
-          update_spi_flash();
-        }
-        card.openFileRead(cur_name);
-        if (card.isFileOpen()) {
-          feedrate_percentage = 100;
-          //saved_feedrate_percentage = feedrate_percentage;
-          planner.flow_percentage[0] = 100;
-          planner.e_factor[0] = planner.flow_percentage[0] * 0.01f;
-          #if EXTRUDERS == 2
-            planner.flow_percentage[1] = 100;
-            planner.e_factor[1] = planner.flow_percentage[1] * 0.01f;
-          #endif
-          card.startFileprint();
-          #if ENABLED(POWER_LOSS_RECOVERY)
-            recovery.prepare();
-          #endif
-          once_flag = 0;
-        }
-      }
-=======
         if (gcode_preview_over != 1) {
           char *cur_name;
           cur_name = strrchr(list_file.file_name[sel_id], '/');
@@ -156,7 +106,6 @@ static void btn_ok_event_cb(lv_obj_t * btn, lv_event_t event) {
             once_flag = 0;
           }
         }
->>>>>>> upstream/2.0.x
       #endif
     }
     else if (DialogType == DIALOG_TYPE_STOP) {
@@ -167,11 +116,7 @@ static void btn_ok_event_cb(lv_obj_t * btn, lv_event_t event) {
       #if ENABLED(SDSUPPORT)
         //card.endFilePrint();
         //wait_for_heatup = false;
-<<<<<<< HEAD
-        uiCfg.print_state = IDLE;
-=======
         uiCfg.print_state           = IDLE;
->>>>>>> upstream/2.0.x
         card.flag.abort_sd_printing = true;
         //queue.clear();
         //quickstop_stepper();
@@ -179,18 +124,9 @@ static void btn_ok_event_cb(lv_obj_t * btn, lv_event_t event) {
         //thermalManager.disable_all_heaters();
 
         //#if ENABLED(POWER_LOSS_RECOVERY)
-<<<<<<< HEAD
-        //recovery.purge();
-        //#endif
-        //queue.enqueue_one_now(PSTR("G91"));
-        //queue.enqueue_one_now(PSTR("G1 Z10"));
-        //queue.enqueue_one_now(PSTR("G90"));
-        //queue.enqueue_one_now(PSTR("G28 X0 Y0"));
-=======
         //  recovery.purge();
         //#endif
         //queue.enqueue_now_P(PSTR("G91\nG1 Z10\nG90\nG28 X0 Y0"));
->>>>>>> upstream/2.0.x
         //queue.inject_P(PSTR("G91\nG1 Z10\nG90\nG28 X0 Y0\nM84\nM107"));
       #endif
     }
@@ -213,8 +149,6 @@ static void btn_ok_event_cb(lv_obj_t * btn, lv_event_t event) {
         draw_return_ui();
       }
     #endif
-<<<<<<< HEAD
-=======
     else if (DialogType == DIALOG_STORE_EEPROM_TIPS) {
       gcode.process_subcommands_now_P(PSTR("M500"));
       clear_cur_ui();
@@ -230,7 +164,6 @@ static void btn_ok_event_cb(lv_obj_t * btn, lv_event_t event) {
       clear_cur_ui();
       draw_return_ui();
     }
->>>>>>> upstream/2.0.x
   }
 }
 
@@ -269,11 +202,7 @@ void lv_draw_dialog(uint8_t type) {
   lv_obj_clean(scr);
 
   lv_obj_t * title = lv_label_create(scr, NULL);
-<<<<<<< HEAD
-  lv_obj_set_style(title, &tft_style_lable_rel);
-=======
   lv_obj_set_style(title, &tft_style_label_rel);
->>>>>>> upstream/2.0.x
   lv_obj_set_pos(title, TITLE_XPOS, TITLE_YPOS);
   lv_label_set_text(title, creat_title_text());
 
@@ -281,53 +210,6 @@ void lv_draw_dialog(uint8_t type) {
 
   //LV_IMG_DECLARE(bmp_pic);
 
-<<<<<<< HEAD
-  static lv_style_t style_btn_rel;                                   // A variable to store the released style
-  lv_style_copy(&style_btn_rel, &lv_style_plain);                    // Initialize from a built-in style
-  style_btn_rel.body.border.color = lv_color_hex3(0x269);
-  style_btn_rel.body.border.width = 1;
-  style_btn_rel.body.main_color = lv_color_hex3(0xADF);
-  style_btn_rel.body.grad_color = lv_color_hex3(0x46B);
-  style_btn_rel.body.shadow.width = 4;
-  style_btn_rel.body.shadow.type = LV_SHADOW_BOTTOM;
-  style_btn_rel.body.radius = LV_RADIUS_CIRCLE;
-  style_btn_rel.text.color = lv_color_hex3(0xDEF);
-  style_btn_rel.text.font = &gb2312_puhui32;
-
-  static lv_style_t style_btn_pr;                                    // A variable to store the pressed style
-  lv_style_copy(&style_btn_pr, &style_btn_rel);                      // Initialize from the released style
-  style_btn_pr.body.border.color = lv_color_hex3(0x46B);
-  style_btn_pr.body.main_color = lv_color_hex3(0x8BD);
-  style_btn_pr.body.grad_color = lv_color_hex3(0x24A);
-  style_btn_pr.body.shadow.width = 2;
-  style_btn_pr.text.color = lv_color_hex3(0xBCD);
-  style_btn_pr.text.font = &gb2312_puhui32;
-
-  lv_obj_t * labelDialog = lv_label_create(scr, NULL);
-  lv_obj_set_style(labelDialog, &tft_style_lable_rel);
-
-  if (DialogType == DIALOG_TYPE_FINISH_PRINT || DialogType == DIALOG_PAUSE_MESSAGE_RESUME) {
-    lv_obj_t * btnOk = lv_btn_create(scr, NULL);                     // Add a button the current screen
-    lv_obj_set_pos(btnOk, BTN_OK_X + 90, BTN_OK_Y);                  // Set its position
-    lv_obj_set_size(btnOk, 100, 50);                                 // Set its size
-    lv_obj_set_event_cb(btnOk, btn_ok_event_cb);
-    lv_btn_set_style(btnOk, LV_BTN_STYLE_REL, &style_btn_rel);       // Set the button's released style
-    lv_btn_set_style(btnOk, LV_BTN_STYLE_PR, &style_btn_pr);         // Set the button's pressed style
-    lv_obj_t * labelOk = lv_label_create(btnOk, NULL);               // Add a label to the button
-    lv_label_set_text(labelOk, print_file_dialog_menu.confirm);      // Set the labels text
-  }
-  else if (DialogType == DIALOG_PAUSE_MESSAGE_WAITING
-           || DialogType == DIALOG_PAUSE_MESSAGE_INSERT
-           || DialogType == DIALOG_PAUSE_MESSAGE_HEAT) {
-    lv_obj_t * btnOk = lv_btn_create(scr, NULL);                     // Add a button the current screen
-    lv_obj_set_pos(btnOk, BTN_OK_X + 90, BTN_OK_Y);                  // Set its position
-    lv_obj_set_size(btnOk, 100, 50);                                 // Set its size
-    lv_obj_set_event_cb(btnOk, btn_ok_event_cb);
-    lv_btn_set_style(btnOk, LV_BTN_STYLE_REL, &style_btn_rel);       // Set the button's released style
-    lv_btn_set_style(btnOk, LV_BTN_STYLE_PR, &style_btn_pr);         // Set the button's pressed style
-    lv_obj_t * labelOk = lv_label_create(btnOk, NULL);               // Add a label to the button
-    lv_label_set_text(labelOk, print_file_dialog_menu.confirm);      // Set the labels text
-=======
   static lv_style_t style_btn_rel;                                 // A variable to store the released style
   lv_style_copy(&style_btn_rel, &lv_style_plain);                  // Initialize from a built-in style
   style_btn_rel.body.border.color = lv_color_hex3(0x269);
@@ -374,7 +256,6 @@ void lv_draw_dialog(uint8_t type) {
     lv_btn_set_style(btnOk, LV_BTN_STYLE_PR, &style_btn_pr);       // Set the button's pressed style
     lv_obj_t * labelOk = lv_label_create(btnOk, NULL);             // Add a label to the button
     lv_label_set_text(labelOk, print_file_dialog_menu.confirm);    // Set the labels text
->>>>>>> upstream/2.0.x
   }
   else if (DialogType == DIALOG_PAUSE_MESSAGE_PAUSING
         || DialogType == DIALOG_PAUSE_MESSAGE_CHANGING
@@ -387,30 +268,6 @@ void lv_draw_dialog(uint8_t type) {
     // nothing to do
   }
   else {
-<<<<<<< HEAD
-    lv_obj_t * btnOk = lv_btn_create(scr, NULL);                     // Add a button the current screen
-    lv_obj_set_pos(btnOk, BTN_OK_X, BTN_OK_Y);                       // Set its position
-    lv_obj_set_size(btnOk, 100, 50);                                 // Set its size
-    lv_obj_set_event_cb(btnOk, btn_ok_event_cb);
-    lv_btn_set_style(btnOk, LV_BTN_STYLE_REL, &style_btn_rel);       // Set the button's released style
-    lv_btn_set_style(btnOk, LV_BTN_STYLE_PR, &style_btn_pr);         // Set the button's pressed style
-    lv_obj_t * labelOk = lv_label_create(btnOk, NULL);               // Add a label to the button
-
-    lv_obj_t * btnCancel = lv_btn_create(scr, NULL);                 // Add a button the current screen
-    lv_obj_set_pos(btnCancel, BTN_CANCEL_X, BTN_CANCEL_Y);           // Set its position
-    lv_obj_set_size(btnCancel, 100, 50);                             // Set its size
-    lv_obj_set_event_cb(btnCancel, btn_cancel_event_cb);
-    lv_btn_set_style(btnCancel, LV_BTN_STYLE_REL, &style_btn_rel);   // Set the button's released style
-    lv_btn_set_style(btnCancel, LV_BTN_STYLE_PR, &style_btn_pr);     // Set the button's pressed style
-    lv_obj_t * labelCancel = lv_label_create(btnCancel, NULL);       // Add a label to the button
-
-    if (DialogType == DIALOG_PAUSE_MESSAGE_OPTION) {
-      lv_label_set_text(labelOk, pause_msg_menu.purgeMore);          // Set the labels text
-      lv_label_set_text(labelCancel, pause_msg_menu.continuePrint);
-    }
-    else {
-      lv_label_set_text(labelOk, print_file_dialog_menu.confirm);    // Set the labels text
-=======
     lv_obj_t * btnOk = lv_btn_create(scr, NULL);                   // Add a button the current screen
     lv_obj_set_pos(btnOk, BTN_OK_X, BTN_OK_Y);                     // Set its position
     lv_obj_set_size(btnOk, 100, 50);                               // Set its size
@@ -433,7 +290,6 @@ void lv_draw_dialog(uint8_t type) {
     }
     else {
       lv_label_set_text(labelOk, print_file_dialog_menu.confirm);  // Set the labels text
->>>>>>> upstream/2.0.x
       lv_label_set_text(labelCancel, print_file_dialog_menu.cancle);
     }
   }
@@ -442,11 +298,7 @@ void lv_draw_dialog(uint8_t type) {
     lv_obj_align(labelDialog, NULL, LV_ALIGN_CENTER, 0, -20);
 
     lv_obj_t * labelFile = lv_label_create(scr, NULL);
-<<<<<<< HEAD
-    lv_obj_set_style(labelFile, &tft_style_lable_rel);
-=======
     lv_obj_set_style(labelFile, &tft_style_label_rel);
->>>>>>> upstream/2.0.x
 
     lv_label_set_text(labelFile, list_file.long_name[sel_id]);
     lv_obj_align(labelFile, NULL, LV_ALIGN_CENTER, 0, -60);
@@ -503,8 +355,6 @@ void lv_draw_dialog(uint8_t type) {
     lv_label_set_text(labelDialog, pause_msg_menu.option);
     lv_obj_align(labelDialog, NULL, LV_ALIGN_CENTER, 0, -20);
   }
-<<<<<<< HEAD
-=======
   else if (DialogType == DIALOG_STORE_EEPROM_TIPS) {
     lv_label_set_text(labelDialog, eeprom_menu.storeTips);
     lv_obj_align(labelDialog, NULL, LV_ALIGN_CENTER, 0, -20);
@@ -517,13 +367,8 @@ void lv_draw_dialog(uint8_t type) {
     lv_label_set_text(labelDialog, eeprom_menu.revertTips);
     lv_obj_align(labelDialog, NULL, LV_ALIGN_CENTER, 0, -20);
   }
->>>>>>> upstream/2.0.x
 }
 
 void lv_clear_dialog() { lv_obj_del(scr); }
 
-<<<<<<< HEAD
-#endif // TFT_LITTLE_VGL_UI
-=======
 #endif // HAS_TFT_LVGL_UI
->>>>>>> upstream/2.0.x

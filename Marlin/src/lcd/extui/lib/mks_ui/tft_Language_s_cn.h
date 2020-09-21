@@ -16,18 +16,12 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-=======
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
->>>>>>> upstream/2.0.x
  *
  */
 #pragma once
 
 //*************简体中文***********************//
-<<<<<<< HEAD
-=======
 #define NEXT_CN                       "下一页"
 #define PREVIOUS_CN                   "上一页"
 #define DEFAULT_CN                    "默认值"
@@ -233,7 +227,6 @@
 #define PAUSE_POSITION_X_CN  "X轴暂停位置(绝对位置,-1无效)"
 #define PAUSE_POSITION_Y_CN  "Y轴暂停位置(绝对位置,-1无效)"
 #define PAUSE_POSITION_Z_CN  "Z轴暂停位置(相对位置,-1无效)"
->>>>>>> upstream/2.0.x
 #define TOOL_TEXT_CN                "工具"
 #define PREHEAT_TEXT_CN             "预热"
 #define MOVE_TEXT_CN                "移动"
@@ -310,11 +303,8 @@
 #define MOTOR_OFF_TEXT_CN         "关闭电机"
 #define MOTOR_OFF_XY_TEXT_CN      "关闭XY"
 #define SHUTDOWN_TEXT_CN          "关机"
-<<<<<<< HEAD
-=======
 #define MACHINE_PARA_CN           "机器参数"
 #define EEPROM_SETTINGS_CN        "Eeprom设置"
->>>>>>> upstream/2.0.x
 
 #define U_DISK_TEXT_CN            "U盘"
 #define SD_CARD_TEXT_CN           "SD卡"
@@ -466,21 +456,6 @@
 #define PRINTING_OPERATION_GBK      "操作"
 #define PRINTING_PAUSE_GBK          "暂停"
 
-<<<<<<< HEAD
-#define MESSEGE_PAUSING_CN          "暂停中..."
-#define MESSEGE_CHANGING_CN         "等待换料开始..."
-#define MESSEGE_UNLOAD_CN           "退料中,请稍等..."
-#define MESSEGE_WAITING_CN          "点击按钮恢复打印"
-#define MESSEGE_INSERT_CN           "装载耗材后,点击按钮开始打印"
-#define MESSEGE_LOAD_CN             "进料中,请稍等..."
-#define MESSEGE_PURGE_CN            "等待挤出..."
-#define MESSEGE_RESUME_CN           "等待恢复打印..."
-#define MESSEGE_HEAT_CN             "按下按钮,加热喷头"
-#define MESSEGE_HEATING_CN          "喷头加热中,请等待..."
-#define MESSEGE_OPTION_CN           "挤出更多还是继续打印?"
-#define MESSEGE_PURGE_MORE_CN       "挤出"
-#define MESSEGE_CONTINUE_PRINT_CN   "打印"
-=======
 #define MESSAGE_PAUSING_CN        "暂停中..."
 #define MESSAGE_CHANGING_CN       "等待换料开始..."
 #define MESSAGE_UNLOAD_CN         "退料中,请稍等..."
@@ -502,4 +477,3 @@
 #define EEPROM_STORE_TIPS_CN  "是否保存参数到EEPROM?"
 #define EEPROM_READ_TIPS_CN   "是否使用EEPROM参数?"
 #define EEPROM_REVERT_TIPS_CN "是否恢复默认参数?"
->>>>>>> upstream/2.0.x

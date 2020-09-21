@@ -16,11 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-=======
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
->>>>>>> upstream/2.0.x
  *
  */
 #pragma once
@@ -102,11 +98,8 @@
 #define MOTOR_OFF_TEXT_SP       "Apagar motor"
 #define MOTOR_OFF_XY_TEXT_SP    "Off-XY"
 #define SHUTDOWN_TEXT_SP        "Apagar"
-<<<<<<< HEAD
-=======
 #define MACHINE_PARA_SP         "Config"
 #define EEPROM_SETTINGS_SP      "Eeprom Set"
->>>>>>> upstream/2.0.x
 
 #define U_DISK_TEXT_SP              "PENDRIVE"
 #define SD_CARD_TEXT_SP             "SD"
@@ -254,15 +247,9 @@
 #define DIALOG_PRINT_MODEL_SP       "¿Está seguro?"
 #define DIALOG_CANCEL_PRINT_SP      "¿Está seguro que desea detener la impresión?"
 
-<<<<<<< HEAD
-#define DIALOG_RETRY_SP               "Reintentar"
-#define DIALOG_STOP_SP                "Stop"
-#define DIALOG_REPRINT_FROM_BREAKPOINT_SP   "Reprint from breakpoint?"
-=======
 #define DIALOG_RETRY_SP             "Reintentar"
 #define DIALOG_STOP_SP              "Stop"
 #define DIALOG_REPRINT_FROM_BREAKPOINT_SP "Reprint from breakpoint?"
->>>>>>> upstream/2.0.x
 //#define DIALOG_UNBIND_PRINTER_SP    "Unbind the printer?"
 #define DIALOG_ERROR_TIPS1_SP         "Error:archivo no encontrado, \npor favor insertar SD o disco USB."
 #define DIALOG_ERROR_TIPS2_SP         "error:transacción fallida, \nconfigurar  baudrate del \ndisplay para la placa base!"
@@ -275,25 +262,6 @@
 #define DIALOG_REPRINT_SP             "Print again"
 #define DIALOG_WIFI_ENABLE_TIPS_SP    "The wifi module is being configured,\nplease wait a moment....."
 
-<<<<<<< HEAD
-#define PRINTING_SP                 "Imprimiendo"
-#define PRINTING_AJUSTES_SP         "Ajustes"
-#define PRINTING_PAUSAR_SP          "Pausar"
-
-#define MESSEGE_PAUSING_SP          "Aparcando..."
-#define MESSEGE_CHANGING_SP         "Esperando para iniciar el cambio de filamento"
-#define MESSEGE_UNLOAD_SP           "Espere para liberar el filamento"
-#define MESSEGE_WAITING_SP          "Pulsar el botón para reanudar impresión"
-#define MESSEGE_INSERT_SP           "Inserte el filamento y pulse el botón para continuar..."
-#define MESSEGE_LOAD_SP             "Espere para purgar el filamento"
-#define MESSEGE_PURGE_SP            "Espere para purgar el filamento"
-#define MESSEGE_RESUME_SP           "Esperando impresora para reanudar..."
-#define MESSEGE_HEAT_SP             "Pulse el botón para calentar la boquilla"
-#define MESSEGE_HEATING_SP          "Calentando boquilla Espere por favor..."
-#define MESSEGE_OPTION_SP           "¿Purgar más o continuar con la impresión?"
-#define MESSEGE_PURGE_MORE_SP       "Purga"
-#define MESSEGE_CONTINUE_PRINT_SP   "Impresión"
-=======
 #define PRINTING_SP               "Imprimiendo"
 #define PRINTING_AJUSTES_SP       "Ajustes"
 #define PRINTING_PAUSAR_SP        "Pausar"
@@ -319,4 +287,3 @@
 #define EEPROM_STORE_TIPS_SP  "¿Guardar ajustes en EEPROM?"
 #define EEPROM_READ_TIPS_SP   "Leer la configuración de EEPROM?"
 #define EEPROM_REVERT_TIPS_SP "Revert settings to factory defaults?"
->>>>>>> upstream/2.0.x

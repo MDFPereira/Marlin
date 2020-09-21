@@ -16,11 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-=======
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
->>>>>>> upstream/2.0.x
  *
  */
 #pragma once
@@ -102,11 +98,8 @@
 #define MOTOR_OFF_TEXT_FR             "M-hors"
 #define MOTOR_OFF_XY_TEXT_FR          "M-hors-XY"
 #define SHUTDOWN_TEXT_FR              "Eteindre"
-<<<<<<< HEAD
-=======
 #define MACHINE_PARA_FR               "Config"
 #define EEPROM_SETTINGS_FR            "Eeprom Set"
->>>>>>> upstream/2.0.x
 
 #define U_DISK_TEXT_FR                "Clé usb"
 #define SD_CARD_TEXT_FR               "Carte SD"
@@ -258,33 +251,6 @@
 #define DIALOG_CANCEL_PRINT_FR        "Arrêter?"
 
 #define DIALOG_STOP_FR                "Arrêter"
-<<<<<<< HEAD
-#define DIALOG_REPRINT_FROM_BREAKPOINT_FR   "Continuer?"
-//#define DIALOG_UNBIND_PRINTER_FR          "Non lié?"
-#define DIALOG_ERROR_TIPS1_FR               "Erreur:error:Aucun fichier, \nvérifiez à nouveau."
-#define DIALOG_ERROR_TIPS2_FR               "Erreur:La opération a échoué. \nVerifiez que le baudrate de l'écran et de \nla carte mère soient identique!"
-#define DIALOG_ERROR_TIPS3_FR               "Erreur: le nom du fichier ou le \nchemin d'accès est trop long."
-#define DIALOG_UNBIND_PRINTER_FR            "Unbind the printer?"
-#define DIALOG_FILAMENT_NO_PRESS_FR         "Filament detection switch is not pressed"
-#define DIALOG_PRINT_FINISH_FR              "L'impression est terminée!"
-#define DIALOG_PRINT_TIME_FR                "Temps d'impression: "
-#define DIALOG_REPRINT_FR                   "Print again"
-#define DIALOG_WIFI_ENABLE_TIPS_FR          "The wifi module is being configured,\nplease wait a moment....."
-
-#define MESSEGE_PAUSING_FR          "Parking..."
-#define MESSEGE_CHANGING_FR         "Attente filament pour démarrer"
-#define MESSEGE_UNLOAD_FR           "Attente retrait du filament"
-#define MESSEGE_WAITING_FR          "Presser bouton,pour reprendre"
-#define MESSEGE_INSERT_FR           "Insérer filament et app. bouton pour continuer..."
-#define MESSEGE_LOAD_FR             "Attente chargement filament"
-#define MESSEGE_PURGE_FR            "Attente Purge filament"
-#define MESSEGE_RESUME_FR           "Attente reprise impression"
-#define MESSEGE_HEAT_FR             "Presser le bouton pour chauffer..."
-#define MESSEGE_HEATING_FR          "Buse en chauffe Patienter SVP..."
-#define MESSEGE_OPTION_FR           "Purger davantage ou continuer l'impression?"
-#define MESSEGE_PURGE_MORE_FR       "Purge"
-#define MESSEGE_CONTINUE_PRINT_FR   "Impression"
-=======
 #define DIALOG_REPRINT_FROM_BREAKPOINT_FR "Continuer?"
 //#define DIALOG_UNBIND_PRINTER_FR    "Non lié?"
 #define DIALOG_ERROR_TIPS1_FR         "Erreur:error:Aucun fichier, \nvérifiez à nouveau."
@@ -318,4 +284,3 @@
 #define EEPROM_STORE_TIPS_FR  "Stocker les paramètres dans l'EEPROM?"
 #define EEPROM_READ_TIPS_FR   "Lire les paramètres de l'EEPROM?"
 #define EEPROM_REVERT_TIPS_FR "Rétablir les paramètres par défaut d'usine?"
->>>>>>> upstream/2.0.x
