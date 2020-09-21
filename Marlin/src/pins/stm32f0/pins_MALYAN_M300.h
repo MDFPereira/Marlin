@@ -47,8 +47,8 @@
 //
 // Timers
 //
-#define STEP_TIMER 6
-#define TEMP_TIMER 7
+#define STEP_TIMER                             6
+#define TEMP_TIMER                             7
 
 //
 // Limit Switches
