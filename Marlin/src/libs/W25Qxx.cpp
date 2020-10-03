@@ -32,10 +32,11 @@
 #if HAS_TFT_LVGL_UI
 >>>>>>> upstream/2.0.x
 
+#include "W25Qxx.h"
 #include <SPI.h>
 #include "../../../../inc/MarlinConfig.h"
 
-#include "W25Qxx.h"
+W25QXXFlash W25QXX;
 
 #ifndef SPI_FLASH_MISO_PIN
   #define SPI_FLASH_MISO_PIN W25QXX_MISO_PIN
