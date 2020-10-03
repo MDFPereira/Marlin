@@ -21,16 +21,16 @@
 >>>>>>> upstream/2.0.x
  *
  */
+
+/**
+ * HAL PersistentStore for STM32F1
+ */
+
 #ifdef __STM32F1__
 
 #include "../../inc/MarlinConfig.h"
 
 #if USE_WIRED_EEPROM
-
-/**
- * PersistentStore for Arduino-style EEPROM interface
- * with simple implementations supplied by Marlin.
- */
 
 #include "../shared/eeprom_if.h"
 #include "../shared/eeprom_api.h"
