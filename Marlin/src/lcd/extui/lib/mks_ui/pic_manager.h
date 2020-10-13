@@ -170,7 +170,7 @@ extern void get_spi_flash_data(const char *rec_buf, int offset, int size);
   #define PIC_DATA_ADDR                 0x003000      //
 
   // TFT35
-  #define DEFAULT_VIEW_ADDR_TFT35       0x1ea070
+  #define DEFAULT_VIEW_ADDR_TFT35       0x1EA070
   #define BAK_VIEW_ADDR_TFT35           (DEFAULT_VIEW_ADDR_TFT35+90*1024)
   #define PIC_ICON_LOGO_ADDR_TFT35      (BAK_VIEW_ADDR_TFT35+80*1024)
   #define PIC_DATA_ADDR_TFT35           0x003000 // (PIC_ICON_LOGO_ADDR_TFT35+350*1024) //0xC5800
